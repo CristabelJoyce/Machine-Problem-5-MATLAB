@@ -1,0 +1,19 @@
+n=(0:199);
+x=input('Enter a value for x(n): ');
+y=zeros(size(x));
+
+for i=1:length(n)
+    if n(i)==0
+        y(i)=(-1.5*x(i)) + (2*x(i + 1)) - (0.5*x(i + 2));
+    elseif n(i)>0 && n(i)<=198
+        y(i)=(0.5*x(i + 1)) - (0.5*x(i - 1));
+    else
+        y(i)=(1.5*x(i)) - (2*x(i - 1)) + (0.5*x(i - 2));
+    end
+end
+plot(n,y,'-r')
+hold on
+plot(n,x,'-b')
+xlabel('n')
+title('x(n) and y(n)')
+legend('x','y')
